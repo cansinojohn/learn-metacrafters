@@ -1,0 +1,43 @@
+// Create a variable to hold your NFT's
+let NFT = [];
+
+// This function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata,
+// and store it in the variable above.
+function mintNFT(name, rarity, edition) {
+  // create an object for the NFT for metadata passing
+  let newNFT = {
+    name: name,
+    rarity: rarity,
+    edition: edition
+  };
+
+  // store new NFT's in the array and increment the value
+  NFT.push(newNFT);
+  return newNFT;
+}
+
+// Create a "loop" that will go through the "array" of NFT's
+// and print their metadata with console.log()
+function listNFTs() {
+  for (let i = 0; i < NFT.length; i++) {
+    let thisNFT = NFT[i];
+    console.log("NFT" + (i+1) + " Name: " + thisNFT.name);
+    console.log("NFT" + (i+1) + " Rarity: " + thisNFT.rarity);
+    console.log("NFT" + (i+1) + " Edition: " + thisNFT.edition);
+  }
+}
+
+// Print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+  return NFT.length;
+}
+
+// Call your functions below this line
+let NFT1 = mintNFT("FIThereum", "Rare", 1);
+let NFT2 = mintNFT("FEUCOIN", "Common", 2);
+let NFT3 = mintNFT("Lodicoin", "Mythical", 1);
+let NFT4 = mintNFT("FIThereum", "Legendary", 2);
+
+listNFTs(); // prints the metadata of all the minted NFTs
+console.log("Total NFT Supply: " + getTotalSupply()); // prints the total number of minted NFTs
